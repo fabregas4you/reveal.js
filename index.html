@@ -24,9 +24,58 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+			<section data-markdown
+			  data-separator="\n---\n$"
+			  data-vertical="\n--\n">
+			  <script type="text/template">
+## MarkdownとReveal.js
+###で簡単スライド作成
+by [fabregas4you](https://github.com/fabregas4you)
+
+---
+
+##スライドをブラウザ上にごりっと
+<br>
+##
+
+--
+###Markdown用のsection定義。
+`---`を入れることで右に次のページを作成。<br>
+`--`を入れることで下に次のページを作成。
+
+```html
+<section data-markdown
+	data-separator="\n---\n$"
+	data-vertical="\n--\n">
+	<script type="text/template">
+	< / script>
+</section>
+```
+
+---
+
+Markdownだけ別ファイルにしておけば<br>
+index.htmlは使いまわせるらしい
+
+```html
+<section data-markdown="./md/firstpage.md"
+data-separator="\n---\n$"
+data-vertical="\n--\n">
+<script type="text/template">
+< / script>
+</section>
+```
+---
+
+`<iframe>`で埋め込みしたいときなどは
+
+素直にHTMLを書く
+
+その他詳細な使い方はGitHubの[README.md](https://github.com/hakimel/reveal.js/)を参照
+
+					</script>
+				</section>
+		　　　</div>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
